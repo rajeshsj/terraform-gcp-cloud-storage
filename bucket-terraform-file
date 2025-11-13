@@ -1,0 +1,16 @@
+
+resource "google_storage_bucket" "bucket" {
+  name          = "<bucket-name>"
+  project       = "<project-name>"
+  location      = "<location>"
+  force_destroy = false
+  storage_class = "STANDARD"
+  labels        = {
+     "environment" = "dev"
+  }
+
+  versioning {
+    enabled = var.enable_versioning
+  }
+
+}
